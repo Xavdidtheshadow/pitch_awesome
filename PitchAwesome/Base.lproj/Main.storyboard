@@ -51,13 +51,178 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Songs" id="QCe-cl-dpb">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TH9-RN-cuI"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7A-G0-JlO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7A-G0-JlO">
+                            <connections>
+                                <segue destination="RzA-nm-J11" kind="presentation" id="vEw-sz-nnw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7i-v2-eLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728" y="-272"/>
+        </scene>
+        <!--Song Details View Controller-->
+        <scene sceneID="ceD-4U-kYn">
+            <objects>
+                <viewController id="Hu7-ma-nlD" customClass="SongDetailsViewController" customModule="PitchAwesome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x5P-7P-Iya"/>
+                        <viewControllerLayoutGuide type="bottom" id="kKM-am-qhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cpU-JV-BXL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-mf-Raz">
+                                <rect key="frame" x="117" y="92" width="233" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-rD-TDv">
+                                <rect key="frame" x="20" y="96" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press Buttons to set starting notes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Wa-Wjm">
+                                <rect key="frame" x="20" y="157" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bek-n2-vCz">
+                                <rect key="frame" x="20" y="186" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="A"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="tqz-A7-M5m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-Sn-uT5">
+                                <rect key="frame" x="88" y="186" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="B♭"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="7wO-ZD-csS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m66-0e-mt7">
+                                <rect key="frame" x="20" y="390" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="F#"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="Adi-fz-9RM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGZ-bE-o5F">
+                                <rect key="frame" x="156" y="186" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="B"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="gHm-Rj-H1h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cm-A0-QSi">
+                                <rect key="frame" x="156" y="254" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="D"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="00G-Nb-uEL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11x-gf-6Gk">
+                                <rect key="frame" x="20" y="254" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="rbS-dh-A4M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38k-5j-Of5">
+                                <rect key="frame" x="20" y="322" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="D#"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="1ns-co-Mfe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bea-Ci-mxc">
+                                <rect key="frame" x="88" y="254" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="C#"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="WDj-dQ-h2C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0B-rj-xfU">
+                                <rect key="frame" x="88" y="390" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="G"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="Vky-AN-p76"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I06-tt-hfT">
+                                <rect key="frame" x="156" y="390" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="G#"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="ba4-f2-eTp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHS-Q8-rKy">
+                                <rect key="frame" x="156" y="322" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="F"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="hQd-tU-5MQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbh-td-hEH">
+                                <rect key="frame" x="88" y="322" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="E"/>
+                                <connections>
+                                    <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="0cM-qZ-xm0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h71-xU-QfP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="H6p-qB-qtp">
+                            <connections>
+                                <action selector="cancel" destination="Hu7-ma-nlD" id="1LB-01-2YU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wZp-zA-dp6">
+                            <connections>
+                                <action selector="done" destination="Hu7-ma-nlD" id="8Av-61-rFD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notesLabel" destination="naV-Wa-Wjm" id="FGe-YK-ADn"/>
+                        <outlet property="textField" destination="Sk0-mf-Raz" id="ggm-NN-fpG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGl-8C-1dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272" y="-272"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lOU-Wl-sZ5">
@@ -74,6 +239,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxI-2m-MeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-92" y="-273"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7oP-1s-occ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RzA-nm-J11" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Mr-Y8-Xq4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hu7-ma-nlD" kind="relationship" relationship="rootViewController" id="Kh1-fy-l9v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ruJ-iM-Ntd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1498" y="-273"/>
         </scene>
     </scenes>
 </document>

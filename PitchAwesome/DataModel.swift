@@ -18,8 +18,9 @@ class DataModel {
     songs.append(s)
     
     let s2 = Song()
-    s.notes.append("B")
-    s.title = "Let Loose the Horses"
+    s2.notes.append("B")
+    s2.title = "Let Loose the Horses"
     songs.append(s2)
+    print(songs)
   }
 }

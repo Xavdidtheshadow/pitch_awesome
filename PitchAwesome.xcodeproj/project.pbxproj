@@ -107,11 +107,11 @@
 				630217D31BB12E8C002C1063 /* DataModel.swift */,
 				630217CF1BB12C55002C1063 /* Song.swift */,
 				630217CD1BB12905002C1063 /* SongsViewController.swift */,
+				630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */,
 				630217A31BB12618002C1063 /* Main.storyboard */,
 				630217A61BB12618002C1063 /* Assets.xcassets */,
 				630217A81BB12618002C1063 /* LaunchScreen.storyboard */,
 				630217AB1BB12618002C1063 /* Info.plist */,
-				630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */,
 			);
 			path = PitchAwesome;
 			sourceTree = "<group>";

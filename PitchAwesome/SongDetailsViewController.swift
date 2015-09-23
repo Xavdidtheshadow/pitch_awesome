@@ -8,88 +8,60 @@
 
 import UIKit
 
-class SongDetailsViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+class SongDetailsViewController: UIViewController {
+  @IBOutlet weak var notesLabel: UILabel!
+  @IBOutlet weak var textField: UITextField!
+  
+  var notes: [String] = []
+//  var dataModel: DataModel
+  
+  // MARK: ViewController Functions
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    textField.becomeFirstResponder()
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    //Looks for single or multiple taps.
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+    view.addGestureRecognizer(tap)
+  }
+  
+  // MARK: IBActions
+  @IBAction func updateNotes(sender: UIButton!) {
+    // could also disable all buttons after a 4th is pressed
+    // for tag in 100...112; viewWithTag(tag).disabled = true
+    if let note = sender.currentTitle {
+      if let index = notes.indexOf(note) {
+        notes.removeAtIndex(index)
+        sender.selected = false
+      } else {
+        notes.append(note)
+        sender.selected = true
+      }
+      
+      configureNotesLabel()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
+  
+  @IBAction func done() {
+//    save it
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  @IBAction func cancel() {
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  // MARK: Utils
+  func configureNotesLabel() {
+    notesLabel.text = notes.joinWithSeparator(", ")
+  }
+  
+  func DismissKeyboard(){
+    //Causes the view (or one of its embedded text fields) to resign the first responder status.
+    view.endEditing(true)
+  }
 }
