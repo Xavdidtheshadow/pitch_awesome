@@ -10,11 +10,11 @@ import UIKit
 
 class SongsViewController: UITableViewController {
   var dataModel: DataModel!
+  let tonePlayer = TonePlayer()
   
   override func viewDidLoad() {
     dataModel.generateData()
     super.viewDidLoad()
-//    tableView.reloadData()
   }
   
   // MARK: Table View
@@ -34,6 +34,7 @@ class SongsViewController: UITableViewController {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let song = dataModel.songs[indexPath.row]
     song.play()
+//    performSegueWithIdentifier("EditSong", sender: song)
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
@@ -55,4 +56,44 @@ class SongsViewController: UITableViewController {
     pitchLabel.text = song.notes.joinWithSeparator(", ")
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let navigationController = segue.destinationViewController as! UINavigationController
+    let controller = navigationController.topViewController as! SongDetailsViewController
+    controller.delegate = self
+    
+    if segue.identifier == "EditSong" {
+      if let indexPath = tableView.indexPathForCell( sender as! UITableViewCell) {
+        controller.songToEdit = dataModel.songs[indexPath.row]
+      }
+    }
+  }
 }
+
+extension SongsViewController: SongDetailsViewControllerDelegate {
+  func songDetailViewControllerDidCancel(controller: SongDetailsViewController) {
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  func songDetailViewController(controller: SongDetailsViewController, didFinishAddingItem song: Song) {
+    let newRowIndex = dataModel.songs.count
+    
+    dataModel.songs.append(song)
+    
+    let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+    
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  func songDetailViewController(controller: SongDetailsViewController, didFinishEditingItem song: Song) {
+    if let index = dataModel.songs.indexOf(song) {
+      let indexPath = NSIndexPath(forRow: index, inSection: 0)
+      if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+        configureTextForCell(cell, song: song)
+      }
+    }
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+}
+
+
