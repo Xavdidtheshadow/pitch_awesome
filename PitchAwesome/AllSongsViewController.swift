@@ -86,12 +86,7 @@ extension SongsViewController: SongDetailsViewControllerDelegate {
     dismissViewControllerAnimated(true, completion: nil)
   }
   func songDetailViewController(controller: SongDetailsViewController, didFinishEditingItem song: Song) {
-    if let index = dataModel.songs.indexOf(song) {
-      let indexPath = NSIndexPath(forRow: index, inSection: 0)
-      if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-        configureTextForCell(cell, song: song)
-      }
-    }
+    tableView.reloadData()
     dismissViewControllerAnimated(true, completion: nil)
   }
 }
