@@ -29,7 +29,9 @@ class TonePlayer {
   func playTones(song: Song) {
     for note in song.notes {
       if let generator = pitches[note] {
-        generator.playForDuration(0.75)
+        generator.play()
+        sleep(1)
+        generator.stop()
       }
     }
   }
