@@ -33,9 +33,7 @@ class SongsViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let song = dataModel.songs[indexPath.row]
-//    song.play()
-    tonePlayer.playSound()
-//    performSegueWithIdentifier("EditSong", sender: song)
+    tonePlayer.playTones(song)
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
@@ -44,6 +42,21 @@ class SongsViewController: UITableViewController {
     
     let paths = [indexPath]
     tableView.deleteRowsAtIndexPaths(paths, withRowAnimation: .Automatic)
+  }
+
+  override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    dataModel.songs.insert(dataModel.songs.removeAtIndex(sourceIndexPath.row), atIndex: destinationIndexPath.row)
+  }
+  
+  // MARK: IBActions
+  @IBAction func edit() {
+    if editing {
+      navigationItem.leftBarButtonItem?.title = "Edit"
+      setEditing(false, animated: true)
+    } else {
+      navigationItem.leftBarButtonItem?.title = "Done"
+      setEditing(true, animated: true)
+    }
   }
   
   // MARK: View Stuff

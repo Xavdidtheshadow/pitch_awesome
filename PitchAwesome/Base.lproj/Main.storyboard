@@ -41,9 +41,6 @@
                                         <constraint firstItem="wZJ-LI-mAP" firstAttribute="top" secondItem="KUy-u7-3gh" secondAttribute="topMargin" constant="4" id="adN-fx-wxN"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="RzA-nm-J11" kind="presentation" identifier="EditSong" id="SIK-Wj-wy2"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -53,7 +50,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Songs" id="QCe-cl-dpb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="TH9-RN-cuI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="TH9-RN-cuI">
+                            <connections>
+                                <action selector="edit" destination="nnz-R4-wPL" id="7E0-bn-COg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7A-G0-JlO">
                             <connections>
                                 <segue destination="RzA-nm-J11" kind="presentation" identifier="AddSong" id="vEw-sz-nnw"/>
@@ -322,7 +323,4 @@
             <point key="canvasLocation" x="1498" y="-273"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="SIK-Wj-wy2"/>
-    </inferredMetricsTieBreakers>
 </document>
