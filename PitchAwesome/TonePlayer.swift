@@ -10,13 +10,9 @@ import Foundation
 import AVFoundation
 
 class TonePlayer {
-  let amplitude = 0.25
-  func playSound() {
-//    var description = AudioComponentDescription.init(componentType: kAudioUnitSubType_RemoteIO, componentSubType: <#T##OSType#>, componentManufacturer: <#T##OSType#>, componentFlags: <#T##UInt32#>, componentFlagsMask: <#T##UInt32#>)
-//    AVAudioUnitGenerator.init(audioComponentDescription: <#T##AudioComponentDescription#>)
-  }
+  var generator = TGSineWaveToneGenerator(channels: 2)
   
-  func stop() {
-    
+  func playSound() {
+    generator.playForDuration(1)
   }
 }
