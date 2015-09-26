@@ -33,7 +33,8 @@ class SongsViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let song = dataModel.songs[indexPath.row]
-    tonePlayer.playTones(song)
+//    tonePlayer.playTones(song)
+    tonePlayer.playFile()
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   

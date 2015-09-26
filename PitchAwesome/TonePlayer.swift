@@ -26,6 +26,10 @@ class TonePlayer {
     "B": TGSineWaveToneGenerator(frequency: 493.88, amplitude: 0.25)
   ]
   
+  // this needs to be declared here for some reason
+  // https://stackoverflow.com/questions/29456742/swift-avaudioplayer-doesnt-work
+  var audioPlayer = AVAudioPlayer()
+  
   func playTones(song: Song) {
     for note in song.notes {
       if let generator = pitches[note] {
@@ -33,6 +37,23 @@ class TonePlayer {
         sleep(1)
         generator.stop()
       }
+    }
+  }
+  
+  func playFile() {
+    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CNatural", ofType: "mp3")!)
+//    print(sound)
+    
+    do {
+      audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
+      audioPlayer.prepareToPlay()
+      if audioPlayer.play() {
+        print("playing!")
+      } else {
+        print("didn't play")
+      }
+    } catch {
+      print(error)
     }
   }
 }
