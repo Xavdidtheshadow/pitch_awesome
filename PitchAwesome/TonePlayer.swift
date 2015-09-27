@@ -41,7 +41,7 @@ class TonePlayer {
   }
   
   func playFile() {
-    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CNatural", ofType: "mp3")!)
+    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CNatural", ofType: "mp3", inDirectory: "tones")!)
 //    print(sound)
     
     do {
