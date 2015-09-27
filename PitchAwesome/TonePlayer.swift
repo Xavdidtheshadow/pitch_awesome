@@ -9,10 +9,12 @@
 import Foundation
 import AVFoundation
 
-class TonePlayer {
+class TonePlayer: NSObject, AVAudioPlayerDelegate {
   var pitches = [String: AVAudioPlayer]()
+  var queue = [AVAudioPlayer]()
   
-  init() {
+  override init() {
+    super.init()
     // setup audio players
     for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
@@ -22,11 +24,12 @@ class TonePlayer {
   func playTones(song: Song) {
     for note in song.notes {
       if let player = pitches[note] {
-        player.play()
+        queue.append(player)
       } else {
         print("*** No player for \(note)!")
       }
     }
+    queue.first?.play()
   }
   
   // MARK: Utils
@@ -35,6 +38,7 @@ class TonePlayer {
     do {
       let audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
       audioPlayer.prepareToPlay()
+      audioPlayer.delegate = self
       return audioPlayer
     } catch {
       print(error)
@@ -58,6 +62,13 @@ class TonePlayer {
       default:
         return title
     }
-    
+  }
+  
+  // MARK: Delegate methods
+  func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+    // burn through the audio queue
+    queue.removeFirst()
+    queue.first?.play()
   }
 }
+
