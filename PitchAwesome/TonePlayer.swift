@@ -47,6 +47,7 @@ class TonePlayer {
     do {
       audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
       audioPlayer.prepareToPlay()
+//      audioPlayer.numberOfLoops = -1
       if audioPlayer.play() {
         print("playing!")
       } else {
