@@ -19,7 +19,6 @@
 		630217D41BB12E8C002C1063 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D31BB12E8C002C1063 /* DataModel.swift */; settings = {ASSET_TAGS = (); }; };
 		6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374072E1BB3BAAA0049AFE7 /* SongButton.swift */; settings = {ASSET_TAGS = (); }; };
 		637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637407301BB3C51D0049AFE7 /* TonePlayer.swift */; settings = {ASSET_TAGS = (); }; };
-		637407741BB514C00049AFE7 /* TGSineWaveToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 637407731BB514C00049AFE7 /* TGSineWaveToneGenerator.m */; settings = {ASSET_TAGS = (); }; };
 		639343C41BB7755800786A9D /* tones in Resources */ = {isa = PBXBuildFile; fileRef = 639343C31BB7755800786A9D /* tones */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -59,9 +58,6 @@
 		630217D31BB12E8C002C1063 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		6374072E1BB3BAAA0049AFE7 /* SongButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongButton.swift; sourceTree = "<group>"; };
 		637407301BB3C51D0049AFE7 /* TonePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
-		637407711BB514BF0049AFE7 /* PitchAwesome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PitchAwesome-Bridging-Header.h"; sourceTree = "<group>"; };
-		637407721BB514C00049AFE7 /* TGSineWaveToneGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSineWaveToneGenerator.h; sourceTree = "<group>"; };
-		637407731BB514C00049AFE7 /* TGSineWaveToneGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSineWaveToneGenerator.m; sourceTree = "<group>"; };
 		639343C31BB7755800786A9D /* tones */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tones; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,10 +109,7 @@
 		6302179E1BB12618002C1063 /* PitchAwesome */ = {
 			isa = PBXGroup;
 			children = (
-				637407721BB514C00049AFE7 /* TGSineWaveToneGenerator.h */,
 				639343C31BB7755800786A9D /* tones */,
-				637407731BB514C00049AFE7 /* TGSineWaveToneGenerator.m */,
-				637407711BB514BF0049AFE7 /* PitchAwesome-Bridging-Header.h */,
 				6302179F1BB12618002C1063 /* AppDelegate.swift */,
 				630217D31BB12E8C002C1063 /* DataModel.swift */,
 				630217CF1BB12C55002C1063 /* Song.swift */,
@@ -291,7 +284,6 @@
 				630217CE1BB12905002C1063 /* AllSongsViewController.swift in Sources */,
 				630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */,
 				630217A01BB12618002C1063 /* AppDelegate.swift in Sources */,
-				637407741BB514C00049AFE7 /* TGSineWaveToneGenerator.m in Sources */,
 				637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dbrownman.PitchAwesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PitchAwesome/PitchAwesome-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -453,7 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dbrownman.PitchAwesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PitchAwesome/PitchAwesome-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
