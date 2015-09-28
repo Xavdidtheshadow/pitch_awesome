@@ -17,11 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
+    // shortcut info here: http://www.stringcode.co.uk/add-ios-9s-quick-actions-shortcut-support-in-15-minutes-right-now/
+    var launchedFromShortcut = true
+    if let shortcutItem = launchOptions?["applicationShortcutUserInfoIconKey"] as? UIApplicationShortcutItem {
+      launchedFromShortcut = false
+      handleShortcutItem(shortcutItem)
+    }
+    
     let navigationController = window!.rootViewController as! UINavigationController
     let controller = navigationController.viewControllers[0] as! SongsViewController
     controller.dataModel = dataModel
     
-    return true
+    return !launchedFromShortcut
+  }
+  
+  func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    var handled = false
+    
+    if shortcutItem.type == "com.db.app.addSong" {
+      let navigationController = window!.rootViewController as! UINavigationController
+      let controller = navigationController.viewControllers[0] as! SongsViewController
+      navigationController.popToRootViewControllerAnimated(false)
+      controller.performSegueWithIdentifier("AddSong", sender: nil)
+      handled = true
+    }
+    
+    return handled
+  }
+  
+  func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+    completionHandler(handleShortcutItem(shortcutItem))
   }
 
   func applicationWillResignActive(application: UIApplication) {
