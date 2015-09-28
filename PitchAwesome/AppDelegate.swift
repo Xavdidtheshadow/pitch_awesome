@@ -17,9 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    let navigationController = window!.rootViewController as! UINavigationController
-    let controller = navigationController.viewControllers[0] as! SongsViewController
-    controller.dataModel = dataModel
+    let tabBarController = window!.rootViewController as! UITabBarController
+
+    if let tabBarViewControllers = tabBarController.viewControllers {
+      let navController = tabBarViewControllers[0] as! UINavigationController
+      let tableController = navController.viewControllers[0] as! SongsViewController
+      tableController.dataModel = dataModel
+    }
+
     
     return true
   }
