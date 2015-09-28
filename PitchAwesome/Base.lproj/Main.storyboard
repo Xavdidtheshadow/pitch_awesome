@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jtn-X2-ReO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Songs-->
@@ -22,28 +24,61 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DN-bY-7qb">
-                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-LI-mAP">
+                                            <rect key="frame" x="287" y="12" width="305" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-LI-mAP">
-                                            <rect key="frame" x="550" y="12" width="42" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DN-bY-7qb">
+                                            <rect key="frame" x="16" y="12" width="256.5" height="20.5"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="5C8-FI-yM8"/>
+                                                <constraint firstAttribute="height" constant="20.5" id="p3q-Fu-0MN"/>
+                                                <constraint firstAttribute="width" secondItem="6DN-bY-7qb" secondAttribute="height" multiplier="25:2" id="pTp-U9-LEb"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="5C8-FI-yM8"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="6DN-bY-7qb" firstAttribute="centerY" secondItem="KUy-u7-3gh" secondAttribute="centerY" id="6aX-Sn-xvg"/>
                                         <constraint firstItem="6DN-bY-7qb" firstAttribute="top" secondItem="KUy-u7-3gh" secondAttribute="topMargin" constant="4" id="7Mi-vJ-rR5"/>
                                         <constraint firstItem="6DN-bY-7qb" firstAttribute="leading" secondItem="KUy-u7-3gh" secondAttribute="leadingMargin" constant="8" id="CzJ-EB-sZv"/>
+                                        <constraint firstItem="6DN-bY-7qb" firstAttribute="centerY" secondItem="KUy-u7-3gh" secondAttribute="centerY" id="Kux-59-cWL"/>
                                         <constraint firstItem="wZJ-LI-mAP" firstAttribute="trailing" secondItem="KUy-u7-3gh" secondAttribute="trailingMargin" id="M0S-io-QgW"/>
+                                        <constraint firstItem="wZJ-LI-mAP" firstAttribute="leading" secondItem="6DN-bY-7qb" secondAttribute="trailing" constant="15" id="REl-7Z-ZBg"/>
                                         <constraint firstItem="wZJ-LI-mAP" firstAttribute="top" secondItem="KUy-u7-3gh" secondAttribute="topMargin" constant="4" id="adN-fx-wxN"/>
+                                        <constraint firstItem="wZJ-LI-mAP" firstAttribute="leading" secondItem="6DN-bY-7qb" secondAttribute="trailing" constant="50" id="ddk-Pr-3aO"/>
+                                        <constraint firstItem="6DN-bY-7qb" firstAttribute="centerY" secondItem="wZJ-LI-mAP" secondAttribute="centerY" id="eMx-KX-5RX"/>
+                                        <constraint firstItem="6DN-bY-7qb" firstAttribute="width" secondItem="wZJ-LI-mAP" secondAttribute="width" multiplier="2" id="fm6-uj-Jl2"/>
+                                        <constraint firstItem="6DN-bY-7qb" firstAttribute="top" secondItem="KUy-u7-3gh" secondAttribute="topMargin" constant="4" id="jwB-WI-wF3"/>
+                                        <constraint firstItem="wZJ-LI-mAP" firstAttribute="centerY" secondItem="KUy-u7-3gh" secondAttribute="centerY" constant="1" id="kq4-LU-rz2"/>
+                                        <constraint firstItem="wZJ-LI-mAP" firstAttribute="centerY" secondItem="KUy-u7-3gh" secondAttribute="centerY" id="qTZ-cv-1fy"/>
+                                        <constraint firstItem="wZJ-LI-mAP" firstAttribute="leading" secondItem="6DN-bY-7qb" secondAttribute="trailing" constant="15" id="uMT-pb-iNa"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="6aX-Sn-xvg"/>
+                                            <exclude reference="7Mi-vJ-rR5"/>
+                                            <exclude reference="eMx-KX-5RX"/>
+                                            <exclude reference="fm6-uj-Jl2"/>
+                                            <exclude reference="jwB-WI-wF3"/>
+                                            <exclude reference="adN-fx-wxN"/>
+                                            <exclude reference="ddk-Pr-3aO"/>
+                                            <exclude reference="kq4-LU-rz2"/>
+                                            <exclude reference="uMT-pb-iNa"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
@@ -87,21 +122,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-mf-Raz">
-                                <rect key="frame" x="117" y="92" width="233" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-mf-Raz">
+                                <rect key="frame" x="117" y="92" width="471" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-rD-TDv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-rD-TDv">
                                 <rect key="frame" x="20" y="96" width="89" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press Buttons to set starting notes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Wa-Wjm">
-                                <rect key="frame" x="20" y="157" width="270" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,9 +315,36 @@
                                     <action selector="updateNotes:" destination="Hu7-ma-nlD" eventType="touchUpInside" id="0cM-qZ-xm0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Buttons to set starting notes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Wa-Wjm">
+                                <rect key="frame" x="20" y="157" width="269.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="naV-Wa-Wjm" firstAttribute="leading" secondItem="cpU-JV-BXL" secondAttribute="leadingMargin" id="2UI-5s-BeS"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="leading" secondItem="Zeq-rD-TDv" secondAttribute="trailing" constant="8" symbolic="YES" id="BCH-ZD-A84"/>
+                            <constraint firstItem="Zeq-rD-TDv" firstAttribute="top" secondItem="x5P-7P-Iya" secondAttribute="bottom" constant="32" id="XTd-yI-dNF"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="centerY" secondItem="Zeq-rD-TDv" secondAttribute="centerY" id="f6V-SO-MBs"/>
+                            <constraint firstItem="Zeq-rD-TDv" firstAttribute="leading" secondItem="cpU-JV-BXL" secondAttribute="leadingMargin" id="kxQ-cJ-fmv"/>
+                            <constraint firstItem="naV-Wa-Wjm" firstAttribute="top" secondItem="Sk0-mf-Raz" secondAttribute="bottom" constant="35" id="oNd-3X-zNq"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="top" secondItem="cpU-JV-BXL" secondAttribute="topMargin" constant="32" id="t74-1B-Faf"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="trailing" secondItem="cpU-JV-BXL" secondAttribute="trailingMargin" constant="8" id="wUE-MB-kmH"/>
+                            <constraint firstItem="Zeq-rD-TDv" firstAttribute="width" secondItem="Sk0-mf-Raz" secondAttribute="width" id="x8X-B4-lR3"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="top" secondItem="x5P-7P-Iya" secondAttribute="bottom" constant="28" id="xNP-mU-Xke"/>
+                            <constraint firstItem="Sk0-mf-Raz" firstAttribute="leading" secondItem="Zeq-rD-TDv" secondAttribute="trailing" constant="8" id="y75-Sm-sDK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="x8X-B4-lR3"/>
+                                <exclude reference="t74-1B-Faf"/>
+                                <exclude reference="y75-Sm-sDK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="h71-xU-QfP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="H6p-qB-qtp">
