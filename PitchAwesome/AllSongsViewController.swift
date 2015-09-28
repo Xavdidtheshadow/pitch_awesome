@@ -37,10 +37,12 @@ class SongsViewController: UITableViewController {
     
     let paths = [indexPath]
     tableView.deleteRowsAtIndexPaths(paths, withRowAnimation: .Automatic)
+    dataModel.saveData()
   }
 
   override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
     dataModel.songs.insert(dataModel.songs.removeAtIndex(sourceIndexPath.row), atIndex: destinationIndexPath.row)
+    dataModel.saveData()
   }
   
   // MARK: IBActions
@@ -55,7 +57,6 @@ class SongsViewController: UITableViewController {
   }
   
   // MARK: View Stuff
-  
   func configureTextForCell(cell: UITableViewCell, song: Song) {
     // could also just subclass UITableViewCell instead of grabbing labels as identifiers a la P3
     let titleLabel = cell.viewWithTag(1000) as! UILabel
@@ -93,10 +94,12 @@ extension SongsViewController: SongDetailsViewControllerDelegate {
     tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
     
     dismissViewControllerAnimated(true, completion: nil)
+    dataModel.saveData()
   }
   func songDetailViewController(controller: SongDetailsViewController, didFinishEditingItem song: Song) {
     tableView.reloadData()
     dismissViewControllerAnimated(true, completion: nil)
+    dataModel.saveData()
   }
 }
 
