@@ -1,4 +1,4 @@
-# pitch_awesome
+# Pitch Awesome
 
 A cappella assistant, pitch pipe, and key-rememberer. 
 
