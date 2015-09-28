@@ -11,12 +11,7 @@ import UIKit
 class SongsViewController: UITableViewController {
   var dataModel: DataModel!
   let tonePlayer = TonePlayer()
-  
-  override func viewDidLoad() {
-    dataModel.generateData()
-    super.viewDidLoad()
-  }
-  
+
   // MARK: Table View
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

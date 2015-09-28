@@ -8,7 +8,27 @@
 
 import Foundation
 
-class Song {
-  var notes = [String]()
+class Song: NSObject, NSCoding {
   var title: String = ""
+  var notes = [String]()
+
+  // do I need this?
+  // var key: String = ""
+  
+  override init() {
+    super.init()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    title = aDecoder.decodeObjectForKey("Title") as! String
+    notes = aDecoder.decodeObjectForKey("Notes") as! [String]
+    super.init()
+  }
+  
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encodeObject(title, forKey: "Title")
+    aCoder.encodeObject(notes, forKey: "Notes")
+  }
+  
+  
 }
