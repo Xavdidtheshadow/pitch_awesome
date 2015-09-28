@@ -13,6 +13,10 @@ class SongsViewController: UITableViewController {
   let tonePlayer = TonePlayer()
 
   // MARK: Table View
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    tableView.allowsSelectionDuringEditing = true
+  }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return dataModel.songs.count
@@ -28,7 +32,11 @@ class SongsViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let song = dataModel.songs[indexPath.row]
-    tonePlayer.playTones(song)
+    if editing {
+      performSegueWithIdentifier("EditSong", sender: song)
+    } else {
+      tonePlayer.playTones(song)
+    }
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
@@ -46,7 +54,7 @@ class SongsViewController: UITableViewController {
   }
   
   // MARK: IBActions
-  @IBAction func edit() {
+  @IBAction func toggleEditing() {
     if editing {
       navigationItem.leftBarButtonItem?.title = "Edit"
       setEditing(false, animated: true)
@@ -72,9 +80,7 @@ class SongsViewController: UITableViewController {
     controller.delegate = self
     
     if segue.identifier == "EditSong" {
-      if let indexPath = tableView.indexPathForCell( sender as! UITableViewCell) {
-        controller.songToEdit = dataModel.songs[indexPath.row]
-      }
+      controller.songToEdit = (sender as! Song)
     }
   }
 }
@@ -100,6 +106,8 @@ extension SongsViewController: SongDetailsViewControllerDelegate {
     tableView.reloadData()
     dismissViewControllerAnimated(true, completion: nil)
     dataModel.saveData()
+    // probably want to only edit one at a time?
+    toggleEditing()
   }
 }
 
