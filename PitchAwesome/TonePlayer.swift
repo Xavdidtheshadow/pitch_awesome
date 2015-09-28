@@ -22,14 +22,20 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   }
   
   func playTones(song: Song) {
-    for note in song.notes {
-      if let player = pitches[note] {
-        queue.append(player)
-      } else {
-        print("*** No player for \(note)!")
+    // tap a cell again to stop!
+    if !queue.isEmpty {
+      queue.first?.stop()
+      queue.removeAll()
+    } else {
+      for note in song.notes {
+        if let player = pitches[note] {
+          queue.append(player)
+        } else {
+          print("*** No player for \(note)!")
+        }
       }
+      queue.first?.play()
     }
-    queue.first?.play()
   }
   
   // MARK: Utils
