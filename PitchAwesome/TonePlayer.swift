@@ -16,8 +16,25 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   override init() {
     super.init()
     // setup audio players
-    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
+//    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
+    for pitch in ["A", "B"] {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
+    }
+  }
+  
+  func playTone(tone: String) {
+    if let player = pitches[tone] {
+      // infinite loops!
+      player.numberOfLoops = -1
+      player.play()
+    }
+  }
+  
+  func stopTones() {
+    for pitch in pitches.keys {
+      pitches[pitch]?.numberOfLoops = 1
+//      pitches[pitch]?.currentTime = 0
+      pitches[pitch]?.stop()
     }
   }
   
@@ -40,7 +57,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   
   // MARK: Utils
   func buildAudioPlayer(title: String) -> AVAudioPlayer {
-    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(title, ofType: "mp3", inDirectory: "tones")!)
+    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(title, ofType: "wav", inDirectory: "tones")!)
     do {
       let audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
       audioPlayer.prepareToPlay()
@@ -73,8 +90,10 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   // MARK: Delegate methods
   func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
     // burn through the audio queue
-    queue.removeFirst()
-    queue.first?.play()
+    if player.numberOfLoops > 0 {
+      queue.removeFirst()
+      queue.first?.play()
+    }
   }
 }
 
