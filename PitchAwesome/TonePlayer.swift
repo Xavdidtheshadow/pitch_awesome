@@ -16,8 +16,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   override init() {
     super.init()
     // setup audio players
-//    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
-    for pitch in ["A", "B"] {
+    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
     }
   }
@@ -90,10 +89,10 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   // MARK: Delegate methods
   func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
     // burn through the audio queue
-    if player.numberOfLoops > 0 {
+//    if player.numberOfLoops > 0 {
       queue.removeFirst()
       queue.first?.play()
-    }
+//    }
   }
 }
 
