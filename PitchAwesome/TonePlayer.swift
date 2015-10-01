@@ -42,6 +42,8 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
     // tap a cell again to stop!
     if !queue.isEmpty {
       queue.first?.stop()
+      queue.first?.currentTime = 0
+      queue.first?.prepareToPlay()
       queue.removeAll()
     } else {
       for note in song.notes {
