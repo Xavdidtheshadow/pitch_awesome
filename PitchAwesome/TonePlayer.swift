@@ -16,8 +16,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   override init() {
     super.init()
     // setup audio players
-//    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
-    for pitch in ["B"] {
+    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
     }
   }
@@ -35,6 +34,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
       pitches[pitch]?.numberOfLoops = 1
 //      pitches[pitch]?.currentTime = 0
       pitches[pitch]?.stop()
+      pitches[pitch]?.prepareToPlay()
     }
   }
   
