@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let navController = tabBarViewControllers[0] as! UINavigationController
       let tableController = navController.viewControllers[0] as! SongsViewController
       tableController.dataModel = dataModel
+    }
+    
+    // I might need to handle this if the app gets deactivated?
+    let session = AVAudioSession()
+    do {
+      try session.setCategory(AVAudioSessionCategoryPlayback)
+    } catch {
+      print("something else wants it more? \(error)")
     }
     
     return !launchedFromShortcut
