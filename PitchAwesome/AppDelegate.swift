@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,9 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       handleShortcutItem(shortcutItem)
     }
     
-    let navigationController = window!.rootViewController as! UINavigationController
-    let controller = navigationController.viewControllers[0] as! SongsViewController
-    controller.dataModel = dataModel
+    let tabBarController = window!.rootViewController as! UITabBarController
+    
+    if let tabBarViewControllers = tabBarController.viewControllers {
+      let navController = tabBarViewControllers[0] as! UINavigationController
+      let tableController = navController.viewControllers[0] as! SongsViewController
+      tableController.dataModel = dataModel
+    }
+    
+    // I might need to handle this if the app gets deactivated?
+    let session = AVAudioSession()
+    do {
+      try session.setCategory(AVAudioSessionCategoryPlayback)
+    } catch {
+      print("something else wants it more? \(error)")
+    }
     
     return !launchedFromShortcut
   }
@@ -35,11 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var handled = false
     
     if shortcutItem.type == "com.db.app.addSong" {
-      let navigationController = window!.rootViewController as! UINavigationController
-      let controller = navigationController.viewControllers[0] as! SongsViewController
-      navigationController.popToRootViewControllerAnimated(false)
-      controller.performSegueWithIdentifier("AddSong", sender: nil)
-      handled = true
+      let tabBarController = window!.rootViewController as! UITabBarController
+      
+      if let tabBarViewControllers = tabBarController.viewControllers {
+        let navController = tabBarViewControllers[0] as! UINavigationController
+        let tableController = navController.viewControllers[0] as! SongsViewController
+        navController.popToRootViewControllerAnimated(false)
+        tableController.performSegueWithIdentifier("AddSong", sender: nil)
+        handled = true
+      }
     }
     
     return handled

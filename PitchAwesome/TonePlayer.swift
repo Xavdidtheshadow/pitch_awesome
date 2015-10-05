@@ -21,10 +21,29 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
     }
   }
   
+  func playTone(tone: String) {
+    if let player = pitches[tone] {
+      // infinite loops!
+      player.numberOfLoops = -1
+      player.play()
+    }
+  }
+  
+  func stopTones() {
+    for pitch in pitches.keys {
+      pitches[pitch]?.numberOfLoops = 1
+//      pitches[pitch]?.currentTime = 0
+      pitches[pitch]?.stop()
+      pitches[pitch]?.prepareToPlay()
+    }
+  }
+  
   func playTones(song: Song) {
     // tap a cell again to stop!
     if !queue.isEmpty {
       queue.first?.stop()
+      queue.first?.currentTime = 0
+      queue.first?.prepareToPlay()
       queue.removeAll()
     } else {
       for note in song.notes {
@@ -40,7 +59,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   
   // MARK: Utils
   func buildAudioPlayer(title: String) -> AVAudioPlayer {
-    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(title, ofType: "mp3", inDirectory: "tones")!)
+    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(title, ofType: "aiff", inDirectory: "tones")!)
     do {
       let audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
       audioPlayer.prepareToPlay()
@@ -73,8 +92,10 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   // MARK: Delegate methods
   func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
     // burn through the audio queue
-    queue.removeFirst()
-    queue.first?.play()
+//    if player.numberOfLoops > 0 {
+      queue.removeFirst()
+      queue.first?.play()
+//    }
   }
 }
 

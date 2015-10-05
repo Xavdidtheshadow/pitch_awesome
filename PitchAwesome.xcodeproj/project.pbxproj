@@ -13,12 +13,13 @@
 		630217AA1BB12618002C1063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630217A81BB12618002C1063 /* LaunchScreen.storyboard */; };
 		630217B51BB12618002C1063 /* PitchAwesomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217B41BB12618002C1063 /* PitchAwesomeTests.swift */; };
 		630217C01BB12618002C1063 /* PitchAwesomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217BF1BB12618002C1063 /* PitchAwesomeUITests.swift */; };
-		630217CE1BB12905002C1063 /* AllSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CD1BB12905002C1063 /* AllSongsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CD1BB12905002C1063 /* SongsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		630217D01BB12C55002C1063 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CF1BB12C55002C1063 /* Song.swift */; settings = {ASSET_TAGS = (); }; };
 		630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		630217D41BB12E8C002C1063 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D31BB12E8C002C1063 /* DataModel.swift */; settings = {ASSET_TAGS = (); }; };
 		6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374072E1BB3BAAA0049AFE7 /* SongButton.swift */; settings = {ASSET_TAGS = (); }; };
 		637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637407301BB3C51D0049AFE7 /* TonePlayer.swift */; settings = {ASSET_TAGS = (); }; };
+		637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		639343C41BB7755800786A9D /* tones in Resources */ = {isa = PBXBuildFile; fileRef = 639343C31BB7755800786A9D /* tones */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -52,12 +53,13 @@
 		630217BB1BB12618002C1063 /* PitchAwesomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchAwesomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630217BF1BB12618002C1063 /* PitchAwesomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchAwesomeUITests.swift; sourceTree = "<group>"; };
 		630217C11BB12618002C1063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		630217CD1BB12905002C1063 /* AllSongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSongsViewController.swift; sourceTree = "<group>"; };
+		630217CD1BB12905002C1063 /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
 		630217CF1BB12C55002C1063 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailsViewController.swift; sourceTree = "<group>"; };
 		630217D31BB12E8C002C1063 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		6374072E1BB3BAAA0049AFE7 /* SongButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongButton.swift; sourceTree = "<group>"; };
 		637407301BB3C51D0049AFE7 /* TonePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
+		637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchPipeViewController.swift; sourceTree = "<group>"; };
 		639343C31BB7755800786A9D /* tones */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tones; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +115,9 @@
 				6302179F1BB12618002C1063 /* AppDelegate.swift */,
 				630217D31BB12E8C002C1063 /* DataModel.swift */,
 				630217CF1BB12C55002C1063 /* Song.swift */,
-				630217CD1BB12905002C1063 /* AllSongsViewController.swift */,
+				630217CD1BB12905002C1063 /* SongsViewController.swift */,
 				6374072E1BB3BAAA0049AFE7 /* SongButton.swift */,
+				637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */,
 				630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */,
 				637407301BB3C51D0049AFE7 /* TonePlayer.swift */,
 				630217A31BB12618002C1063 /* Main.storyboard */,
@@ -281,8 +284,9 @@
 				6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */,
 				630217D41BB12E8C002C1063 /* DataModel.swift in Sources */,
 				630217D01BB12C55002C1063 /* Song.swift in Sources */,
-				630217CE1BB12905002C1063 /* AllSongsViewController.swift in Sources */,
+				630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */,
 				630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */,
+				637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */,
 				630217A01BB12618002C1063 /* AppDelegate.swift in Sources */,
 				637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */,
 			);
