@@ -427,7 +427,7 @@
         <scene sceneID="lOU-Wl-sZ5">
             <objects>
                 <navigationController id="Jtn-X2-ReO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Songs" id="v5r-4x-OPV"/>
+                    <tabBarItem key="tabBarItem" title="Songs" image="Song List" id="v5r-4x-OPV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cfC-NT-bRm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -441,7 +441,7 @@
             </objects>
             <point key="canvasLocation" x="720" y="-273"/>
         </scene>
-        <!--Pitch Pipe?-->
+        <!--Pitch Pipe-->
         <scene sceneID="EOd-Mh-l1c">
             <objects>
                 <viewController id="4eU-6a-2i0" customClass="PitchPipeViewController" customModule="PitchAwesome" customModuleProvider="target" sceneMemberID="viewController">
@@ -755,11 +755,11 @@
                             <constraint firstItem="a7b-kf-UPt" firstAttribute="height" secondItem="tuq-18-4Ma" secondAttribute="height" id="yip-WJ-x60"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pitch Pipe?" id="KH8-be-RSK"/>
+                    <tabBarItem key="tabBarItem" title="Pitch Pipe" image="Tones" id="KH8-be-RSK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIS-Q9-A4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="714"/>
+            <point key="canvasLocation" x="720" y="628"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7oP-1s-occ">
@@ -797,9 +797,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4C-AD-Wg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92" y="-273"/>
+            <point key="canvasLocation" x="-278" y="187"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Song List" width="25" height="25"/>
+        <image name="Tones" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="epJ-kh-znh"/>
     </inferredMetricsTieBreakers>
