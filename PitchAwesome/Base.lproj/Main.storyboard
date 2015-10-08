@@ -25,19 +25,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-LI-mAP">
-                                            <rect key="frame" x="287" y="12" width="305" height="20.5"/>
+                                            <rect key="frame" x="276.5" y="12" width="315.5" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DN-bY-7qb">
-                                            <rect key="frame" x="16" y="12" width="256.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="12" width="246" height="20.5"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="250" id="5C8-FI-yM8"/>
                                                 <constraint firstAttribute="height" constant="20.5" id="p3q-Fu-0MN"/>
-                                                <constraint firstAttribute="width" secondItem="6DN-bY-7qb" secondAttribute="height" multiplier="25:2" id="pTp-U9-LEb"/>
+                                                <constraint firstAttribute="width" secondItem="6DN-bY-7qb" secondAttribute="height" multiplier="24:2" id="pTp-U9-LEb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
