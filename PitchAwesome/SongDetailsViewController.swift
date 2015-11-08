@@ -88,6 +88,7 @@ class SongDetailsViewController: UIViewController {
         button.setTitle(button.currentTitle?.lowercaseString, forState: .Normal)
       }
     }
+    configureButtons()
   }
   
   // MARK: Utils
@@ -107,6 +108,8 @@ class SongDetailsViewController: UIViewController {
       if let note = button.currentTitle {
         if let _ = notes.indexOf(note) {
           button.selected = true
+        } else {
+          button.selected = false
         }
       }
     }
@@ -118,4 +121,12 @@ class SongDetailsViewController: UIViewController {
     song.notes = notes
     return song
   }
+
+//  This doens't work?
+//  func act(operation: UIButton -> ()) {
+//    for tag in 0...11 {
+//      let button = view.viewWithTag(tag) as! UIButton
+//      operation(button)
+//    }
+//  }
 }
