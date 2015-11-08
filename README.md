@@ -7,3 +7,5 @@ Also, my first actual iOS project!
 In active development. Master branch is garunteed to work, but pardon my dust. 
 
 I'll be free in the store eventually. 
+
+Tones generated [here](http://onlinetonegenerator.com/) and cut with Audacity. 

@@ -79,6 +79,17 @@ class SongDetailsViewController: UIViewController {
     delegate?.songDetailViewControllerDidCancel(self)
   }
   
+  @IBAction func swapButtonCase(sender: UISwitch) {
+    for tag in 100...111 {
+      let button = view.viewWithTag(tag) as! UIButton
+      if sender.on {
+        button.setTitle(button.currentTitle?.uppercaseString, forState: .Normal)
+      } else {
+        button.setTitle(button.currentTitle?.lowercaseString, forState: .Normal)
+      }
+    }
+  }
+  
   // MARK: Utils
   func configureNotesLabel() {
     notesLabel.text = notes.joinWithSeparator(", ")

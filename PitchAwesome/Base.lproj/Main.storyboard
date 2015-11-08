@@ -339,6 +339,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Vz-Fc-YDq" secondAttribute="height" multiplier="49:31" id="GXO-4K-pFs"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="swapButtonCase:" destination="Hu7-ma-nlD" eventType="valueChanged" id="rXF-fQ-pCc"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44d-rW-nJV">
                                 <rect key="frame" x="493" y="138" width="9.5" height="20"/>
