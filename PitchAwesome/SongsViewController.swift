@@ -101,6 +101,9 @@ extension SongsViewController: SongDetailsViewControllerDelegate {
     
     dismissViewControllerAnimated(true, completion: nil)
     dataModel.saveData()
+    if editing {
+      toggleEditing()
+    }
   }
   func songDetailViewController(controller: SongDetailsViewController, didFinishEditingItem song: Song) {
     tableView.reloadData()

@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // shortcut info here: http://www.stringcode.co.uk/add-ios-9s-quick-actions-shortcut-support-in-15-minutes-right-now/
     var launchedFromShortcut = true
-    if let shortcutItem = launchOptions?["applicationShortcutUserInfoIconKey"] as? UIApplicationShortcutItem {
-      launchedFromShortcut = false
-      handleShortcutItem(shortcutItem)
+    if #available(iOS 9.0, *) {
+        if let shortcutItem = launchOptions?["applicationShortcutUserInfoIconKey"] as? UIApplicationShortcutItem {
+          launchedFromShortcut = false
+          handleShortcutItem(shortcutItem)
+        }
     }
     
     let tabBarController = window!.rootViewController as! UITabBarController
@@ -44,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return !launchedFromShortcut
   }
   
+  @available(iOS 9.0, *)
   func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
     var handled = false
     
@@ -62,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return handled
   }
   
+  @available(iOS 9.0, *)
   func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
     completionHandler(handleShortcutItem(shortcutItem))
   }
