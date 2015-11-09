@@ -29,6 +29,13 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
     }
   }
   
+  func stopTone(tone: String) {
+    if let player = pitches[tone] {
+      player.stop()
+      player.prepareToPlay()
+    }
+  }
+  
   func stopTones() {
     for pitch in pitches.keys {
       pitches[pitch]?.numberOfLoops = 1

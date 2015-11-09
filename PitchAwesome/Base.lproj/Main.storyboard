@@ -138,8 +138,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Notes: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Wa-Wjm">
-                                <rect key="frame" x="20" y="130" width="120" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Wa-Wjm">
+                                <rect key="frame" x="20" y="130" width="111" height="20"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="nxL-ul-cEs"/>
@@ -469,8 +469,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="LC4-Ee-yai"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="YQY-PR-cEg"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="nmW-xN-kvL"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="22b-ds-Eyu"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="sYi-BA-xfn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWu-B6-V8p">
@@ -486,8 +486,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="GYd-44-GFJ"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="fub-gK-Fnq"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="g5K-UB-VlG"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="ck4-G2-Q2W"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="tqn-Mt-fzP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMJ-fE-AUC">
@@ -503,8 +503,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="E1X-Nu-MSP"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="gWS-Jv-yhx"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="xwW-7g-Gyn"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="JCP-hZ-Zab"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="rkn-2p-cLm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGo-2f-U0G">
@@ -520,8 +520,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="pYz-hf-l57"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="EDl-kr-epB"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="oFy-1j-puQ"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="5Xg-EQ-DPH"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="iqV-3e-xR5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFi-43-pgo">
@@ -537,8 +537,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="irt-nr-1so"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="Tsn-fF-PgM"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="zWe-vq-9Df"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="9Bb-Dt-y3Z"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="EhB-ks-ejM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-V5-0dk">
@@ -554,8 +554,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="Ro9-gh-XRY"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="5n5-gO-onn"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="9oo-wA-Oqf"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="HjR-jZ-6sX"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="c5s-Xd-h7c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-wg-eaJ">
@@ -571,8 +571,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="sod-Hr-2me"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="GTM-OE-uad"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="uE8-xE-ieo"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="8IL-g6-hUN"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="NBq-vp-FBx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDc-ea-URD">
@@ -588,8 +588,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="I15-tX-VQu"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="b2W-bH-jwj"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="j7k-hk-Ud3"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="yjp-IJ-NPW"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="z5a-Ex-Oxf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLa-3i-Qkq">
@@ -605,8 +605,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="VbI-Rg-C8H"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="6A3-MC-ny1"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="zHK-MX-Z4n"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="m0k-9m-etY"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="t6F-sr-EG6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLC-na-awR">
@@ -622,8 +622,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="WGZ-h0-SOb"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="NsZ-jt-4Ip"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="UUh-IB-Kd8"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="Qfn-k6-1o1"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="osj-Lc-44V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8v-Ld-x1H">
@@ -639,8 +639,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="eod-aI-25K"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="Ktp-NP-Acy"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="Mlp-FV-jQX"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="oI4-rr-zzg"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="oNP-KY-gf3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-kf-UPt">
@@ -656,8 +656,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="playPitch:" destination="4eU-6a-2i0" eventType="touchDown" id="ndw-ob-4sA"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpOutside" id="W2Q-ZV-PAR"/>
-                                    <action selector="stopPitches" destination="4eU-6a-2i0" eventType="touchUpInside" id="cwA-sR-LpC"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpInside" id="DeW-TC-uaA"/>
+                                    <action selector="stopPitch:" destination="4eU-6a-2i0" eventType="touchUpOutside" id="g1O-29-ayM"/>
                                 </connections>
                             </button>
                         </subviews>

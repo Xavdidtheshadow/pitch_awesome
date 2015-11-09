@@ -17,7 +17,9 @@ class PitchPipeViewController: UIViewController {
     }
   }
   
-  @IBAction func stopPitches() {
-    tonePlayer.stopTones()
+  @IBAction func stopPitch(sender: UIButton!) {
+    if let pitch = sender.currentTitle {
+      tonePlayer.stopTone(pitch)
+    }
   }
 }
