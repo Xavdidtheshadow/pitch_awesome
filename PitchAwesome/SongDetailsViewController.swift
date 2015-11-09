@@ -31,11 +31,11 @@ class SongDetailsViewController: UIViewController {
       textField.text = song.title
       notes = song.notes
       configureButtons()
-      configureNotesLabel()
     } else {
       // probably only renaming a new song
       textField.becomeFirstResponder()
     }
+    configureNotesLabel()
   }
   
   // MARK: IBActions
@@ -43,14 +43,10 @@ class SongDetailsViewController: UIViewController {
     if let note = sender.currentTitle {
       if let index = notes.indexOf(note) {
         notes.removeAtIndex(index)
-        
-        sender.backgroundColor = UIColor.lightGrayColor()
-        sender.tintColor = UIColor.blackColor()
+        deactivateButton(sender)
       } else {
         notes.append(note)
-        
-        sender.backgroundColor = UIColor.blueColor()
-        sender.tintColor = UIColor.yellowColor()
+        activateButton(sender)
       }
       
       configureNotesLabel()
@@ -72,7 +68,11 @@ class SongDetailsViewController: UIViewController {
   
   // MARK: Utils
   func configureNotesLabel() {
-    notesLabel.text = notes.joinWithSeparator(", ")
+    if notes.isEmpty {
+      notesLabel.text = "Starting Notes"
+    } else {
+      notesLabel.text = notes.joinWithSeparator(", ")
+    }
   }
   
   func dismissKeyboard() {
@@ -86,7 +86,7 @@ class SongDetailsViewController: UIViewController {
       let button = view.viewWithTag(tag) as! UIButton
       if let note = button.currentTitle {
         if let _ = notes.indexOf(note) {
-          button.selected = true
+          activateButton(button)
         }
       }
     }

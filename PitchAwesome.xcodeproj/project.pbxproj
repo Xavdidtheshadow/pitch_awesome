@@ -18,6 +18,7 @@
 		630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */; };
 		630217D41BB12E8C002C1063 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D31BB12E8C002C1063 /* DataModel.swift */; };
 		634BFD421BF06DF3007C6A89 /* DarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BFD411BF06DF3007C6A89 /* DarkView.swift */; };
+		634BFD441BF083E9007C6A89 /* UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BFD431BF083E9007C6A89 /* UIFunctions.swift */; };
 		6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374072E1BB3BAAA0049AFE7 /* SongButton.swift */; };
 		637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637407301BB3C51D0049AFE7 /* TonePlayer.swift */; };
 		637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */; };
@@ -59,6 +60,7 @@
 		630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailsViewController.swift; sourceTree = "<group>"; };
 		630217D31BB12E8C002C1063 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		634BFD411BF06DF3007C6A89 /* DarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkView.swift; sourceTree = "<group>"; };
+		634BFD431BF083E9007C6A89 /* UIFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFunctions.swift; sourceTree = "<group>"; };
 		6374072E1BB3BAAA0049AFE7 /* SongButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongButton.swift; sourceTree = "<group>"; };
 		637407301BB3C51D0049AFE7 /* TonePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
 		637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchPipeViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				630217A61BB12618002C1063 /* Assets.xcassets */,
 				630217A81BB12618002C1063 /* LaunchScreen.storyboard */,
 				630217AB1BB12618002C1063 /* Info.plist */,
+				634BFD431BF083E9007C6A89 /* UIFunctions.swift */,
 			);
 			path = PitchAwesome;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				630217D01BB12C55002C1063 /* Song.swift in Sources */,
 				630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */,
 				630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */,
+				634BFD441BF083E9007C6A89 /* UIFunctions.swift in Sources */,
 				637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */,
 				630217A01BB12618002C1063 /* AppDelegate.swift in Sources */,
 				634BFD421BF06DF3007C6A89 /* DarkView.swift in Sources */,
