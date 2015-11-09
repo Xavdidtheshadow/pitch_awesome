@@ -22,34 +22,24 @@ class SongDetailsViewController: UIViewController {
   
   var songToEdit: Song?
   var notes: [String] = []
-
-  
-  // MARK: ViewController Functions
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    textField.becomeFirstResponder()
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Looks for single or multiple taps.
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-    view.addGestureRecognizer(tap)
-    
+  
     if let song = songToEdit {
       title = "Edit Song"
       textField.text = song.title
       notes = song.notes
       configureButtons()
       configureNotesLabel()
+    } else {
+      // probably only renaming a new song
+      textField.becomeFirstResponder()
     }
   }
   
   // MARK: IBActions
   @IBAction func updateNotes(sender: UIButton!) {
-    // could also disable all buttons after a 4th is pressed
-    // for tag in 100...112; viewWithTag(tag).disabled = true
     if let note = sender.currentTitle {
       if let index = notes.indexOf(note) {
         notes.removeAtIndex(index)
@@ -57,13 +47,10 @@ class SongDetailsViewController: UIViewController {
       } else {
         notes.append(note)
         sender.selected = true
-//        sender.tintColor = blue
       }
       
       configureNotesLabel()
     }
-    // if the user clicks a button, we want to assume they're done typing the song name
-    dismissKeyboard()
   }
   
   @IBAction func done() {
@@ -106,5 +93,39 @@ class SongDetailsViewController: UIViewController {
     song.title = textField.text!
     song.notes = notes
     return song
+  }
+  
+  func focusUserOn(textfield: UITextField) {
+    if let superV = textfield.superview {
+      let darkArea = DarkView(frame: superV.bounds)
+      darkArea.delegate = self
+      
+      // add DarkView (everything is dark now)
+      superV.addSubview(darkArea)
+      
+      // bring the textview back to the front.
+      superV.bringSubviewToFront(textfield)
+    }
+  }
+}
+
+extension SongDetailsViewController: DarkViewDelegate, UITextViewDelegate {
+  // delegate function of a textfield
+  func textFieldDidBeginEditing(sender: UITextField) {
+    focusUserOn(sender) // darken everything else
+  }
+  
+  // delegate function of DarkView undarken everything
+  func tappedDark(view: DarkView) {
+    
+    guard let superV = view.superview else {
+      return
+    }
+    
+    if let textField = superV.subviews.last as? UITextField {
+      textField.resignFirstResponder() // also stop editing
+    }
+    
+    view.removeFromSuperview()
   }
 }

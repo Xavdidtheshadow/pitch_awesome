@@ -15,18 +15,6 @@ class DataModel {
     loadData()
   }
   
-  func generateData() {
-    let s = Song()
-    s.notes.append("G#")
-    s.title = "Valerie"
-    songs.append(s)
-    
-    let s2 = Song()
-    s2.notes.append("B♭")
-    s2.title = "Let Loose the Horses"
-    songs.append(s2)
-  }
-  
   // MARK: Data Retrieval
   func saveData() {
     let data = NSMutableData()
