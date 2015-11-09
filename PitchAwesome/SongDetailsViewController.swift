@@ -43,10 +43,14 @@ class SongDetailsViewController: UIViewController {
     if let note = sender.currentTitle {
       if let index = notes.indexOf(note) {
         notes.removeAtIndex(index)
-        sender.selected = false
+        
+        sender.backgroundColor = UIColor.lightGrayColor()
+        sender.tintColor = UIColor.blackColor()
       } else {
         notes.append(note)
-        sender.selected = true
+        
+        sender.backgroundColor = UIColor.blueColor()
+        sender.tintColor = UIColor.yellowColor()
       }
       
       configureNotesLabel()
