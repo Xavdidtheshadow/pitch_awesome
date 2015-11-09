@@ -16,7 +16,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   override init() {
     super.init()
     // setup audio players
-    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B♭", "B"] {
+    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"] {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
     }
   }
@@ -73,20 +73,7 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   
   func pitchForTitle(title: String) -> String {
     // sometimes note titles don't match filenames
-    switch title {
-      case "B♭":
-        return "BFlat"
-      case "C#":
-        return "CSharp"
-      case "D#":
-        return "DSharp"
-      case "F#":
-        return "FSharp"
-      case "G#":
-        return "GSharp"
-      default:
-        return title
-    }
+    return title.stringByReplacingOccurrencesOfString("#", withString: "Sharp")
   }
   
   // MARK: Delegate methods
