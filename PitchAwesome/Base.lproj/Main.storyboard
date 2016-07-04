@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3aP-6S-OkW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3aP-6S-OkW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -87,11 +87,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Songs" id="QCe-cl-dpb">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="TH9-RN-cuI">
+                            <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <action selector="toggleEditing" destination="nnz-R4-wPL" id="Ehb-0Z-kOs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7A-G0-JlO">
+                            <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="RzA-nm-J11" kind="presentation" identifier="AddSong" id="vEw-sz-nnw"/>
                             </connections>
@@ -433,11 +435,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="h71-xU-QfP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="H6p-qB-qtp">
+                            <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <action selector="cancel" destination="Hu7-ma-nlD" id="1LB-01-2YU"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="wZp-zA-dp6">
+                            <color key="tintColor" red="0.035294117647058823" green="0.31372549019607843" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="done" destination="Hu7-ma-nlD" id="8Av-61-rFD"/>
                             </connections>
@@ -852,6 +856,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Qpb-4S-RUN">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="selectedImageTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                     </tabBar>
                     <connections>
                         <segue destination="Jtn-X2-ReO" kind="relationship" relationship="viewControllers" id="vj0-DS-orn"/>
