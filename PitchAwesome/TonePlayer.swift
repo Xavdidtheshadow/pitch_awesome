@@ -82,9 +82,18 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
     }
   }
   
+  // takes a string (eg: "C#") and turns it into a file name (eg: "highCSharp")
   func pitchForTitle(title: String) -> String {
-    // sometimes note titles don't match filenames
-    return title.stringByReplacingOccurrencesOfString("#", withString: "Sharp")
+    var fname = [String]()
+    let ord = title.asciiValueAt(pos: 0)
+    // this can only be the letters A-G, either capitalization
+    if ord >= 65 && ord <= 90 {
+      fname.append("high")
+    } else {
+      fname.append("low")
+    }
+    fname.append(title.uppercaseString)
+    return fname.joinWithSeparator("").stringByReplacingOccurrencesOfString("#", withString: "Sharp")
   }
   
   // MARK: Delegate methods
@@ -94,5 +103,18 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
       queue.removeFirst()
       queue.first?.play()
 //    }
+  }
+}
+
+// source: http://stackoverflow.com/a/29835826/1825390
+extension String {
+  func asciiValueAt(pos pos: UInt32) -> UInt32 {
+    guard characters.count > 0 && Int(pos) < characters.count else  { return 0 }
+    return Array(characters)[Int(pos)].unicodeScalarsValue
+  }
+}
+extension Character {
+  var unicodeScalarsValue: UInt32 {
+    return String(self).unicodeScalars.first!.value
   }
 }

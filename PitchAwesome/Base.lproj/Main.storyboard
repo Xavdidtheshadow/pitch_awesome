@@ -734,7 +734,7 @@
                             <constraint firstItem="wLC-na-awR" firstAttribute="height" secondItem="tuq-18-4Ma" secondAttribute="height" id="GQy-Sc-QgJ"/>
                             <constraint firstItem="Pno-Rg-ArQ" firstAttribute="leading" secondItem="Z2C-Pa-GKe" secondAttribute="trailing" constant="8" id="H0g-rP-PXN"/>
                             <constraint firstItem="JhR-3v-evE" firstAttribute="top" secondItem="zMJ-fE-AUC" secondAttribute="bottom" constant="8" id="Hgu-JQ-UA9"/>
-                            <constraint firstItem="Z2C-Pa-GKe" firstAttribute="leading" secondItem="6Q8-W5-Izb" secondAttribute="trailing" constant="8.5" id="Icf-1R-CcC"/>
+                            <constraint firstItem="Z2C-Pa-GKe" firstAttribute="leading" secondItem="6Q8-W5-Izb" secondAttribute="trailing" constant="8" id="Icf-1R-CcC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kFi-43-pgo" secondAttribute="trailing" constant="8" id="IlV-R8-ztO"/>
                             <constraint firstItem="wLC-na-awR" firstAttribute="height" secondItem="tuq-18-4Ma" secondAttribute="height" id="J5X-Qw-PHs"/>
                             <constraint firstItem="VDc-ea-URD" firstAttribute="top" secondItem="TWu-B6-V8p" secondAttribute="bottom" constant="8" id="Jpk-uH-75x"/>
@@ -814,6 +814,11 @@
                             <constraint firstItem="a7b-kf-UPt" firstAttribute="height" secondItem="tuq-18-4Ma" secondAttribute="height" id="yip-WJ-x60"/>
                             <constraint firstItem="Pno-Rg-ArQ" firstAttribute="leading" secondItem="Z2C-Pa-GKe" secondAttribute="trailing" constant="8" id="z6S-el-A9t"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Icf-1R-CcC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pitch Pipe" image="Tones" id="KH8-be-RSK"/>
                 </viewController>
