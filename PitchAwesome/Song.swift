@@ -29,6 +29,4 @@ class Song: NSObject, NSCoding {
     aCoder.encodeObject(title, forKey: "Title")
     aCoder.encodeObject(notes, forKey: "Notes")
   }
-  
-  
 }

@@ -16,7 +16,8 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   override init() {
     super.init()
     // setup audio players
-    for pitch in ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"] {
+    let notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+    for pitch in notes {
       pitches[pitch] = buildAudioPlayer(pitchForTitle(pitch))
     }
   }
@@ -66,7 +67,10 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
   
   // MARK: Utils
   func buildAudioPlayer(title: String) -> AVAudioPlayer {
-    let sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(title, ofType: "aiff", inDirectory: "tones")!)
+    guard let url = NSBundle.mainBundle().pathForResource(title, ofType: "aiff", inDirectory: "tones") else {
+      return AVAudioPlayer()
+    }
+    let sound = NSURL(fileURLWithPath: url)
     do {
       let audioPlayer = try AVAudioPlayer(contentsOfURL: sound)
       audioPlayer.prepareToPlay()
@@ -92,4 +96,3 @@ class TonePlayer: NSObject, AVAudioPlayerDelegate {
 //    }
   }
 }
-

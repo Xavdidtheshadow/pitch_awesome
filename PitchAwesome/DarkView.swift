@@ -22,7 +22,7 @@ class DarkView : UIView, UIGestureRecognizerDelegate {
     
     backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
     
-    let tap = UITapGestureRecognizer(target: self, action: Selector("tapped"))
+    let tap = UITapGestureRecognizer(target: self, action: #selector(DarkView.tapped))
     tap.delegate = self
     self.addGestureRecognizer(tap)
   }

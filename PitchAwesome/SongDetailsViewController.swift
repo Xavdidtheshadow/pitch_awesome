@@ -99,6 +99,8 @@ class SongDetailsViewController: UIViewController {
       if let note = button.currentTitle {
         if let _ = notes.indexOf(note) {
           activateButton(button)
+        } else {
+          deactivateButton(button)
         }
       }
     }
@@ -111,6 +113,7 @@ class SongDetailsViewController: UIViewController {
     return song
   }
 
+  // this could concievably take any UI element for use in a tour or something
   func focusUserOn(textfield: UITextField) {
     if let superV = textfield.superview {
       let darkArea = DarkView(frame: superV.bounds)
@@ -144,3 +147,4 @@ extension SongDetailsViewController: DarkViewDelegate, UITextViewDelegate {
 
     view.removeFromSuperview()
   }
+}

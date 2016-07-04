@@ -9,7 +9,8 @@
 import UIKit
 
 func activateButton(sender: UIButton!) {
-  sender.backgroundColor = UIColor.blueColor()
+  sender.backgroundColor = UIColor(red:0.04, green:0.31, blue:0.82, alpha:1.0)
+  // changing text color doesn't work for a mysterious reason
   sender.tintColor = UIColor.yellowColor()
 }
 
