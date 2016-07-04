@@ -1,11 +1,11 @@
 # Pitch Awesome
 
-A cappella assistant, pitch pipe, and key-rememberer. 
+A cappella assistant, pitch pipe, and key-rememberer.
 
-Also, my first actual iOS project! 
+Also, my first actual iOS project!
 
-In active development. Master branch is garunteed to work, but pardon my dust. 
+Feedback and suggestions are welcome.
 
-I'll be free in the store eventually. 
+Tones generated [here](http://onlinetonegenerator.com/) and cut with Audacity.
 
-Tones generated [here](http://onlinetonegenerator.com/) and cut with Audacity. 
+You can download it in the store [here](http://bit.ly/pitch_awesome)!

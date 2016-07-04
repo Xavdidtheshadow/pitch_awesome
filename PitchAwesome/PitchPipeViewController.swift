@@ -13,11 +13,15 @@ class PitchPipeViewController: UIViewController {
   
   @IBAction func playPitch(sender: UIButton!) {
     if let pitch = sender.currentTitle {
+      activateButton(sender)
       tonePlayer.playTone(pitch)
     }
   }
   
-  @IBAction func stopPitches() {
-    tonePlayer.stopTones()
+  @IBAction func stopPitch(sender: UIButton!) {
+    if let pitch = sender.currentTitle {
+      deactivateButton(sender)
+      tonePlayer.stopTone(pitch)
+    }
   }
 }

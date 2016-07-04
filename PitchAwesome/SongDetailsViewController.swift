@@ -17,55 +17,42 @@ protocol SongDetailsViewControllerDelegate: class {
 class SongDetailsViewController: UIViewController {
   @IBOutlet weak var notesLabel: UILabel!
   @IBOutlet weak var textField: UITextField!
-  
+
   weak var delegate: SongDetailsViewControllerDelegate?
-  
+
   var songToEdit: Song?
   var notes: [String] = []
 
-  
-  // MARK: ViewController Functions
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    textField.becomeFirstResponder()
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Looks for single or multiple taps.
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-    view.addGestureRecognizer(tap)
-    
+
     if let song = songToEdit {
       title = "Edit Song"
       textField.text = song.title
       notes = song.notes
       configureButtons()
-      configureNotesLabel()
+    } else {
+      // probably only renaming a new song
+      textField.becomeFirstResponder()
     }
+    configureNotesLabel()
   }
-  
+
   // MARK: IBActions
   @IBAction func updateNotes(sender: UIButton!) {
-    // could also disable all buttons after a 4th is pressed
-    // for tag in 100...112; viewWithTag(tag).disabled = true
     if let note = sender.currentTitle {
       if let index = notes.indexOf(note) {
         notes.removeAtIndex(index)
-        sender.selected = false
+        deactivateButton(sender)
       } else {
         notes.append(note)
-        sender.selected = true
-//        sender.tintColor = blue
+        activateButton(sender)
       }
-      
+
       configureNotesLabel()
     }
-    // if the user clicks a button, we want to assume they're done typing the song name
-    dismissKeyboard()
   }
-  
+
   @IBAction func done() {
     if let song = songToEdit {
       delegate?.songDetailViewController(self, didFinishEditingItem: configureSong(song))
@@ -73,12 +60,12 @@ class SongDetailsViewController: UIViewController {
       delegate?.songDetailViewController(self, didFinishAddingItem: configureSong(Song()))
     }
   }
-  
+
   @IBAction func cancel() {
     dismissKeyboard()
     delegate?.songDetailViewControllerDidCancel(self)
   }
-  
+
   @IBAction func swapButtonCase(sender: UISwitch) {
     for tag in 100...111 {
       let button = view.viewWithTag(tag) as! UIButton
@@ -90,31 +77,33 @@ class SongDetailsViewController: UIViewController {
     }
     configureButtons()
   }
-  
+
   // MARK: Utils
   func configureNotesLabel() {
-    notesLabel.text = notes.joinWithSeparator(", ")
+    if notes.isEmpty {
+      notesLabel.text = "Starting Notes"
+    } else {
+      notesLabel.text = notes.joinWithSeparator(", ")
+    }
   }
-  
+
   func dismissKeyboard() {
     // Causes the view (or one of its embedded text fields) to resign the first responder status.
     view.endEditing(true)
   }
-  
+
   // based on an array of notes, checks the appropreate buttons
   func configureButtons() {
     for tag in 100...111 {
       let button = view.viewWithTag(tag) as! UIButton
       if let note = button.currentTitle {
         if let _ = notes.indexOf(note) {
-          button.selected = true
-        } else {
-          button.selected = false
+          activateButton(button)
         }
       }
     }
   }
-  
+
   // pulls data out ouf UI and model to save new song
   func configureSong(song: Song) -> Song {
     song.title = textField.text!
@@ -122,11 +111,36 @@ class SongDetailsViewController: UIViewController {
     return song
   }
 
-//  This doens't work?
-//  func act(operation: UIButton -> ()) {
-//    for tag in 0...11 {
-//      let button = view.viewWithTag(tag) as! UIButton
-//      operation(button)
-//    }
-//  }
+  func focusUserOn(textfield: UITextField) {
+    if let superV = textfield.superview {
+      let darkArea = DarkView(frame: superV.bounds)
+      darkArea.delegate = self
+
+      // add DarkView (everything is dark now)
+      superV.addSubview(darkArea)
+
+      // bring the textview back to the front.
+      superV.bringSubviewToFront(textfield)
+    }
+  }
 }
+
+extension SongDetailsViewController: DarkViewDelegate, UITextViewDelegate {
+  // delegate function of a textfield
+  func textFieldDidBeginEditing(sender: UITextField) {
+    focusUserOn(sender) // darken everything else
+  }
+
+  // delegate function of DarkView undarken everything
+  func tappedDark(view: DarkView) {
+
+    guard let superV = view.superview else {
+      return
+    }
+
+    if let textField = superV.subviews.last as? UITextField {
+      textField.resignFirstResponder() // also stop editing
+    }
+
+    view.removeFromSuperview()
+  }

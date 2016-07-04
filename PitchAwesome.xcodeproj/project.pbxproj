@@ -13,14 +13,16 @@
 		630217AA1BB12618002C1063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630217A81BB12618002C1063 /* LaunchScreen.storyboard */; };
 		630217B51BB12618002C1063 /* PitchAwesomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217B41BB12618002C1063 /* PitchAwesomeTests.swift */; };
 		630217C01BB12618002C1063 /* PitchAwesomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217BF1BB12618002C1063 /* PitchAwesomeUITests.swift */; };
-		630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CD1BB12905002C1063 /* SongsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		630217D01BB12C55002C1063 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CF1BB12C55002C1063 /* Song.swift */; settings = {ASSET_TAGS = (); }; };
-		630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		630217D41BB12E8C002C1063 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D31BB12E8C002C1063 /* DataModel.swift */; settings = {ASSET_TAGS = (); }; };
-		6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374072E1BB3BAAA0049AFE7 /* SongButton.swift */; settings = {ASSET_TAGS = (); }; };
-		637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637407301BB3C51D0049AFE7 /* TonePlayer.swift */; settings = {ASSET_TAGS = (); }; };
-		637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		639343C41BB7755800786A9D /* tones in Resources */ = {isa = PBXBuildFile; fileRef = 639343C31BB7755800786A9D /* tones */; settings = {ASSET_TAGS = (); }; };
+		630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CD1BB12905002C1063 /* SongsViewController.swift */; };
+		630217D01BB12C55002C1063 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217CF1BB12C55002C1063 /* Song.swift */; };
+		630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */; };
+		630217D41BB12E8C002C1063 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630217D31BB12E8C002C1063 /* DataModel.swift */; };
+		634BFD421BF06DF3007C6A89 /* DarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BFD411BF06DF3007C6A89 /* DarkView.swift */; };
+		634BFD441BF083E9007C6A89 /* UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BFD431BF083E9007C6A89 /* UIFunctions.swift */; };
+		6374072F1BB3BAAA0049AFE7 /* SongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374072E1BB3BAAA0049AFE7 /* SongButton.swift */; };
+		637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637407301BB3C51D0049AFE7 /* TonePlayer.swift */; };
+		637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */; };
+		639343C41BB7755800786A9D /* tones in Resources */ = {isa = PBXBuildFile; fileRef = 639343C31BB7755800786A9D /* tones */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		630217CF1BB12C55002C1063 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		630217D11BB12DB4002C1063 /* SongDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailsViewController.swift; sourceTree = "<group>"; };
 		630217D31BB12E8C002C1063 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		634BFD411BF06DF3007C6A89 /* DarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkView.swift; sourceTree = "<group>"; };
+		634BFD431BF083E9007C6A89 /* UIFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFunctions.swift; sourceTree = "<group>"; };
 		6374072E1BB3BAAA0049AFE7 /* SongButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongButton.swift; sourceTree = "<group>"; };
 		637407301BB3C51D0049AFE7 /* TonePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
 		637631B11BBA5505001F5B0D /* PitchPipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchPipeViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				639343C31BB7755800786A9D /* tones */,
 				6302179F1BB12618002C1063 /* AppDelegate.swift */,
 				630217D31BB12E8C002C1063 /* DataModel.swift */,
+				634BFD411BF06DF3007C6A89 /* DarkView.swift */,
 				630217CF1BB12C55002C1063 /* Song.swift */,
 				630217CD1BB12905002C1063 /* SongsViewController.swift */,
 				6374072E1BB3BAAA0049AFE7 /* SongButton.swift */,
@@ -124,6 +129,7 @@
 				630217A61BB12618002C1063 /* Assets.xcassets */,
 				630217A81BB12618002C1063 /* LaunchScreen.storyboard */,
 				630217AB1BB12618002C1063 /* Info.plist */,
+				634BFD431BF083E9007C6A89 /* UIFunctions.swift */,
 			);
 			path = PitchAwesome;
 			sourceTree = "<group>";
@@ -214,7 +220,7 @@
 				TargetAttributes = {
 					6302179B1BB12618002C1063 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 8M65A3GAXJ;
+						DevelopmentTeam = 2MUPH5M8H8;
 					};
 					630217AF1BB12618002C1063 = {
 						CreatedOnToolsVersion = 7.0;
@@ -286,8 +292,10 @@
 				630217D01BB12C55002C1063 /* Song.swift in Sources */,
 				630217CE1BB12905002C1063 /* SongsViewController.swift in Sources */,
 				630217D21BB12DB4002C1063 /* SongDetailsViewController.swift in Sources */,
+				634BFD441BF083E9007C6A89 /* UIFunctions.swift in Sources */,
 				637631B21BBA5505001F5B0D /* PitchPipeViewController.swift in Sources */,
 				630217A01BB12618002C1063 /* AppDelegate.swift in Sources */,
+				634BFD421BF06DF3007C6A89 /* DarkView.swift in Sources */,
 				637407311BB3C51D0049AFE7 /* TonePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -405,6 +413,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -418,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -431,9 +440,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PitchAwesome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dbrownman.PitchAwesome;
+				PRODUCT_BUNDLE_IDENTIFIER = xavdid.PitchAwesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -445,9 +455,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PitchAwesome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dbrownman.PitchAwesome;
+				PRODUCT_BUNDLE_IDENTIFIER = xavdid.PitchAwesome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
