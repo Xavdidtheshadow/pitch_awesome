@@ -856,8 +856,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Qpb-4S-RUN">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                        <color key="selectedImageTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Jtn-X2-ReO" kind="relationship" relationship="viewControllers" id="vj0-DS-orn"/>
